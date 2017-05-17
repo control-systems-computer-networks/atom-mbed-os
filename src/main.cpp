@@ -38,12 +38,12 @@ AnalogIn pot2 (A1);
 PwmOut spkr(D6);
 
 void sweep(void){
-    for (float i=2000.0; i<10000.0; i+=100) {
-        spkr.period(1.0/i);
-        spkr=0.5;
+    for (float i=2000.0; i<10000.0; i+=10) {
+        spkr.period(1.0/i);//set pwd period
+        spkr=0.25;//set pwd duty cycle
         wait(0.02);
     }
-    spkr=0.0;
+    spkr=0.0;//off: duty cycle is 0
 }
 void js(void)
 {
